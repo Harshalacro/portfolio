@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Harshal Pawar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Stats Cards */
+        .stat-card {
+            grid-column: span 3;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .stat-info h4 {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-info p {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        /* Chart Containers */
+        .chart-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            height: 400px;
+            /* Fixed height for consistency */
+        }
+
+        .chart-full {
+            grid-column: span 12;
+        }
+
+        .chart-half {
+            grid-column: span 6;
+        }
+
+        @media (max-width: 1024px) {
+            .stat-card {
+                grid-column: span 6;
+            }
+
+            .chart-half {
+                grid-column: span 12;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .stat-card {
+                grid-column: span 12;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Harshal<span>.DS</span></a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="project.html">Projects</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="certification.html">Certifications</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 8rem; padding-bottom: 4rem;">
+        <h1 class="section-title text-gradient">Analytics Dashboard</h1>
+
+        <!-- Key Metrics -->
+        <div class="dashboard-grid animate-on-scroll">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                <div class="stat-info">
+                    <h4>Total Projects</h4>
+                    <p>12</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-code"></i></div>
+                <div class="stat-info">
+                    <h4>Hours Coded</h4>
+                    <p>1,240+</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-award"></i></div>
+                <div class="stat-info">
+                    <h4>Certifications</h4>
+                    <p>5</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-star"></i></div>
+                <div class="stat-info">
+                    <h4>GitHub Stars</h4>
+                    <p>34</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="dashboard-grid animate-on-scroll">
+            <!-- Main Activity Graph -->
+            <div class="chart-container chart-full">
+                <h3 style="margin-bottom: 1rem; color: var(--accent);">Monthly Contribution Activity</h3>
+                <canvas id="activityChart"></canvas>
+            </div>
+
+            <!-- Skill Radar -->
+            <div class="chart-container chart-half">
+                <h3 style="margin-bottom: 1rem; color: var(--accent);">Skill Balance</h3>
+                <canvas id="skillChart"></canvas>
+            </div>
+
+            <!-- Tech Stack Doughnut -->
+            <div class="chart-container chart-half">
+                <h3 style="margin-bottom: 1rem; color: var(--accent);">Technology Distribution</h3>
+                <canvas id="techChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Harshal Pawar. Dashboard mocked for demonstration.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

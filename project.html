@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Harshal Pawar</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-icon {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.8rem;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary-glow);
+      border-radius: 20px;
+      font-family: var(--font-mono);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-top: auto;
+    }
+
+    .project-link:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Harshal<span>.DS</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="project.html" class="active">Projects</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="certification.html">Certifications</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
+    </div>
+  </header>
+
+  <section class="container" style="padding-top: 8rem;">
+    <h1 class="section-title text-gradient">Data Science Projects</h1>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <article class="project-card animate-on-scroll">
+        <i class="fas fa-users-cog project-icon"></i>
+        <h3 class="project-title">Customer Churn Prediction</h3>
+        <p class="project-desc">Developed a classification model using logistic regression and random forests to predict
+          customer churn with 85% accuracy.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Scikit-Learn</span>
+          <span class="tag">ML</span>
+        </div>
+        <a href="#" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card animate-on-scroll">
+        <i class="fas fa-comments project-icon"></i>
+        <h3 class="project-title">Twitter Sentiment Analysis</h3>
+        <p class="project-desc">Built an NLP pipeline with tokenization and sentiment scoring to analyze public
+          sentiment trends on Twitter.</p>
+        <div class="tags">
+          <span class="tag">NLP</span>
+          <span class="tag">Python</span>
+          <span class="tag">Visualization</span>
+        </div>
+        <a href="#" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card animate-on-scroll">
+        <i class="fas fa-home project-icon"></i>
+        <h3 class="project-title">House Price Prediction</h3>
+        <p class="project-desc">Regression models with feature engineering to predict house prices, helping investors
+          make data-driven decisions.</p>
+        <div class="tags">
+          <span class="tag">Regression</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">Statistics</span>
+        </div>
+        <a href="#" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project-card animate-on-scroll">
+        <i class="fas fa-eye project-icon"></i>
+        <h3 class="project-title">Image Classification (CNN)</h3>
+        <p class="project-desc">Designed convolutional neural networks to classify images with high accuracy using data
+          augmentation techniques.</p>
+        <div class="tags">
+          <span class="tag">Deep Learning</span>
+          <span class="tag">Keras/TF</span>
+          <span class="tag">CV</span>
+        </div>
+        <a href="#" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <!-- Project 5 -->
+      <article class="project-card animate-on-scroll">
+        <i class="fas fa-chart-line project-icon"></i>
+        <h3 class="project-title">Time Series Forecasting</h3>
+        <p class="project-desc">Applied ARIMA and LSTM models to forecast financial time series data with interactive
+          visualizations.</p>
+        <div class="tags">
+          <span class="tag">Time Series</span>
+          <span class="tag">LSTM</span>
+          <span class="tag">Forecasting</span>
+        </div>
+        <a href="#" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <!-- Project 6 -->
+      <article class="project-card animate-on-scroll">
+        <i class="fas fa-shopping-cart project-icon"></i>
+        <h3 class="project-title">Recommender System</h3>
+        <p class="project-desc">Hybrid recommender system (Content-based + Collaborative) to personalize suggestions for
+          e-commerce users.</p>
+        <div class="tags">
+          <span class="tag">Algorithms</span>
+          <span class="tag">Python</span>
+          <span class="tag">System Design</span>
+        </div>
+        <a href="#" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Harshal Pawar. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

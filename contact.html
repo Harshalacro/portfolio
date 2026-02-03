@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Harshal Pawar</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .contact-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 3rem;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(20px);
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .contact-item:hover {
+      background: rgba(37, 99, 235, 0.1);
+      border-color: var(--primary);
+      transform: translateX(10px);
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--bg-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+
+    .contact-text h4 {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-text p {
+      color: var(--text-main);
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .social-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+      color: white;
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: scale(1.1);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    #tooltip {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    #tooltip.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Harshal<span>.DS</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="project.html">Projects</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="certification.html">Certifications</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
+    </div>
+  </header>
+
+  <div class="container contact-wrapper">
+    <div class="contact-card animate-on-scroll">
+      <h1 class="text-gradient" style="font-size: 2.5rem; margin-bottom: 0.5rem;">Let's Connect</h1>
+      <p style="color: var(--text-muted);">Open for collaborations and data science opportunities.</p>
+
+      <div class="contact-list">
+        <div class="contact-item" onclick="copyToClipboard('harshalpawar3103@gmail.com')">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-text">
+            <h4>Email</h4>
+            <p>harshalpawar3103@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="contact-item" onclick="copyToClipboard('+917879387076')">
+          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="contact-text">
+            <h4>Phone</h4>
+            <p>+91 78793 87076</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a href="https://github.com/Harshalacro" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/harshal-pawar-331518246" target="_blank" class="social-btn"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://instagram.com" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div id="tooltip">Copied to clipboard!</div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Harshal Pawar. Reach out anytime.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showTooltip();
+      });
+    }
+
+    function showTooltip() {
+      const tooltip = document.getElementById('tooltip');
+      tooltip.classList.add('show');
+      setTimeout(() => {
+        tooltip.classList.remove('show');
+      }, 2000);
+    }
+  </script>
+</body>
+
+</html>

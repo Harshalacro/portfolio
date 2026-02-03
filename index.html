@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshal Pawar | Data Scientist</title>
+
+  <!-- CSS & Fonts -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Page Specific Styles */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: var(--nav-height);
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content h2 {
+      font-size: 1.5rem;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      margin-bottom: 2rem;
+    }
+
+    .profile-wrapper {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 2rem;
+      position: relative;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+    }
+
+    .blob {
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      z-index: -1;
+      opacity: 0.3;
+      animation: glow-pulse 3s infinite ease-in-out;
+      filter: blur(20px);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .skill-group h3 {
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    .skill-item {
+      margin-bottom: 1rem;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 4px;
+      width: 0;
+      /* Animate this */
+      transition: width 1.5s ease-out;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Harshal<span>.DS</span></a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="project.html">Projects</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="certification.html">Certifications</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="mobile-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content animate-on-scroll">
+      <div class="profile-wrapper">
+        <div class="blob"></div>
+        <img src="photo.jpg" alt="Harshal Pawar" class="profile-img">
+      </div>
+
+      <h1 class="text-gradient">Harshal Pawar</h1>
+      <h2>Data Scientist & Engineer</h2>
+
+      <p style="max-width: 600px; margin: 0 auto 2.5rem; color: var(--text-muted); font-size: 1.1rem;">
+        Turning raw data into actionable insights through Machine Learning, Cloud Computing, and Interactive Analytics.
+      </p>
+
+      <div class="cta-group">
+        <a href="project.html" class="btn btn-primary"><i class="fas fa-code"></i> View Projects</a>
+        <a href="dashboard.html" class="btn btn-outline" style="margin-left: 1rem;"><i class="fas fa-chart-line"></i>
+          View Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Skills Section -->
+  <section class="container glass" style="border-radius: 20px; padding: 3rem; margin-bottom: 4rem;">
+    <h2 class="section-title">Technical Expertise</h2>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3><i class="fas fa-brain"></i> Data Science & ML</h3>
+
+        <div class="skill-item">
+          <div class="skill-info"><span>Python</span> <span>90%</span></div>
+          <div class="progress-bar">
+            <div class="progress" style="width: 90%;"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>Data Analytics</span> <span>85%</span></div>
+          <div class="progress-bar">
+            <div class="progress" style="width: 85%;"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>TensorFlow / PyTorch</span> <span>75%</span></div>
+          <div class="progress-bar">
+            <div class="progress" style="width: 75%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3><i class="fas fa-cloud"></i> Cloud & Dev</h3>
+
+        <div class="skill-item">
+          <div class="skill-info"><span>Azure Cloud</span> <span>70%</span></div>
+          <div class="progress-bar">
+            <div class="progress" style="width: 70%;"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>SQL & Power BI</span> <span>80%</span></div>
+          <div class="progress-bar">
+            <div class="progress" style="width: 80%;"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>Web Development</span> <span>75%</span></div>
+          <div class="progress-bar">
+            <div class="progress" style="width: 75%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Harshal Pawar. Built with Data, Sweat & Code.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Simple typing effect or just dynamic loading for progress bars
+    document.addEventListener('DOMContentLoaded', () => {
+      // Trigger progress bars
+      setTimeout(() => {
+        document.querySelectorAll('.progress').forEach(bar => {
+          const width = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => bar.style.width = width, 100);
+        });
+      }, 500);
+    });
+  </script>
+</body>
+
+</html>
