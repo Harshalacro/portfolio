@@ -6,17 +6,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // Common Chart Defaults for Global Theme
-    Chart.defaults.color = '#94a3b8'; // text-muted
-    Chart.defaults.borderColor = 'rgba(59, 130, 246, 0.1)'; // faint border
-    Chart.defaults.font.family = "'Inter', sans-serif";
+    Chart.defaults.color = '#c0b298'; // text-muted (antique grey)
+    Chart.defaults.borderColor = 'rgba(212, 175, 55, 0.1)'; // faint gold border
+    Chart.defaults.font.family = "'Crimson Text', serif";
 
     // 1. Activity Line Chart
     const ctxActivity = document.getElementById('activityChart').getContext('2d');
 
     // Gradient for Line Chart
     let gradient = ctxActivity.createLinearGradient(0, 0, 0, 400);
-    gradient.addColorStop(0, 'rgba(37, 99, 235, 0.5)'); // Primary with opacity
-    gradient.addColorStop(1, 'rgba(37, 99, 235, 0.0)');
+    gradient.addColorStop(0, 'rgba(212, 175, 55, 0.5)'); // Gold with opacity
+    gradient.addColorStop(1, 'rgba(212, 175, 55, 0.0)');
 
     new Chart(ctxActivity, {
         type: 'line',
@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
             datasets: [{
                 label: 'Contributions',
                 data: [12, 19, 3, 5, 2, 3, 20, 35, 40, 25, 45, 50],
-                borderColor: '#2563eb', // Primary Blue
+                borderColor: '#d4af37', // Gold Primary
                 backgroundColor: gradient,
                 fill: true,
                 tension: 0.4, // Smooth curve
-                pointBackgroundColor: '#0ea5e9',
+                pointBackgroundColor: '#f1c40f',
                 pointBorderColor: '#fff',
                 pointHoverRadius: 6
             }]
@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
             plugins: {
                 legend: { display: false },
                 tooltip: {
-                    backgroundColor: 'rgba(5, 10, 20, 0.9)',
+                    backgroundColor: 'rgba(10, 10, 15, 0.9)',
                     titleColor: '#fff',
-                    bodyColor: '#cbd5e1',
-                    borderColor: 'rgba(59, 130, 246, 0.3)',
+                    bodyColor: '#f5f0e1',
+                    borderColor: 'rgba(212, 175, 55, 0.3)',
                     borderWidth: 1
                 }
             },
@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
             datasets: [{
                 label: 'Proficiency',
                 data: [95, 85, 90, 70, 75, 80],
-                backgroundColor: 'rgba(37, 99, 235, 0.2)',
-                borderColor: '#0ea5e9',
-                pointBackgroundColor: '#0ea5e9',
+                backgroundColor: 'rgba(212, 175, 55, 0.2)',
+                borderColor: '#f1c40f',
+                pointBackgroundColor: '#d4af37',
                 pointBorderColor: '#fff',
                 pointHoverRadius: 6
             }]
@@ -99,10 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
             datasets: [{
                 data: [40, 25, 20, 15],
                 backgroundColor: [
-                    '#2563eb', // Blue
-                    '#0ea5e9', // Sky
-                    '#6366f1', // Indigo
-                    '#1e293b'  // Slate (Dark)
+                    '#d4af37', // Gold
+                    '#f1c40f', // Bright Gold
+                    '#740001', // Gryffindor Crimson
+                    '#9e1b1b'  // Bright Crimson
                 ],
                 borderWidth: 0,
                 hoverOffset: 4

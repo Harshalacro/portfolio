@@ -53,4 +53,53 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.animate-on-scroll').forEach(el => {
         observer.observe(el);
     });
+
+    // Magical Wand Sparkle Effect
+    const createSparkle = (x, y) => {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = `${x}px`;
+        sparkle.style.top = `${y}px`;
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => sparkle.remove(), 800);
+    };
+
+    let lastSparkleTime = 0;
+    window.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        if (now - lastSparkleTime > 40) { // Limit spark creation rate
+            createSparkle(e.clientX, e.clientY + window.scrollY); // Add scrollY because it's absolute positioned relative to body
+            lastSparkleTime = now;
+        }
+    });
+
+    // Magical Text Scramble Effect
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ*&^%$#@!+=-_><|}{[]~";
+
+    document.querySelectorAll('.text-gradient, .section-title').forEach(el => {
+        el.addEventListener('mouseover', event => {
+            let iterations = 0;
+            const originalText = event.target.dataset.value || event.target.innerText;
+            if (!event.target.dataset.value) event.target.dataset.value = originalText;
+
+            clearInterval(event.target.dataset.interval);
+
+            event.target.dataset.interval = setInterval(() => {
+                event.target.innerText = originalText.split("")
+                    .map((letter, index) => {
+                        if (index < iterations) {
+                            return originalText[index];
+                        }
+                        return letters[Math.floor(Math.random() * 46)];
+                    })
+                    .join("");
+
+                if (iterations >= originalText.length) {
+                    clearInterval(event.target.dataset.interval);
+                }
+                iterations += 1 / 3;
+            }, 30);
+        });
+    });
 });

@@ -22,10 +22,12 @@
     }
 
     .hero-content h1 {
-      font-size: 4rem;
+      font-family: var(--font-heading);
+      font-size: 4.5rem;
       font-weight: 900;
       line-height: 1.1;
       margin-bottom: 1rem;
+      letter-spacing: 2px;
     }
 
     .hero-content h2 {
@@ -48,7 +50,7 @@
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid var(--primary);
-      box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
     }
 
     .blob {
@@ -130,35 +132,55 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-content animate-on-scroll">
+  <section class="hero" style="position: relative; overflow: hidden;">
+
+    <!-- Magical Elements Background -->
+    <div class="floating-magic-elements">
+      <div class="snitch"></div>
+
+      <!-- Magical Runes -->
+      <div class="rune r1">&#x16b1;</div>
+      <div class="rune r2">&#x16a0;</div>
+      <div class="rune r3">&#x16d6;</div>
+      <div class="rune r4">&#x16f0;</div>
+      <div class="rune r5">&#x16c1;</div>
+      <div class="rune r6">&#x16a4;</div>
+
+      <!-- Faded Icons -->
+      <i class="fas fa-hat-wizard magical-backdrop-icon hat"></i>
+      <i class="fas fa-scroll magical-backdrop-icon scroll"></i>
+    </div>
+
+    <div class="container hero-content animate-on-scroll" style="position: relative; z-index: 10;">
       <div class="profile-wrapper">
-        <div class="blob"></div>
+        <div class="blob" style="background: linear-gradient(45deg, var(--primary), var(--accent));"></div>
         <img src="photo.jpg" alt="Harshal Pawar" class="profile-img">
       </div>
 
       <h1 class="text-gradient">Harshal Pawar</h1>
-      <h2>Data Scientist & Engineer</h2>
+      <h2 style="font-family: var(--font-heading); letter-spacing: 1px;">Data Wizard & AI Alchemist</h2>
 
-      <p style="max-width: 600px; margin: 0 auto 2.5rem; color: var(--text-muted); font-size: 1.1rem;">
-        Turning raw data into actionable insights through Machine Learning, Cloud Computing, and Interactive Analytics.
+      <p style="max-width: 600px; margin: 0 auto 2.5rem; color: var(--text-muted); font-size: 1.2rem;">
+        Turning raw data into magical insights through Machine Learning, Cloud Conjuring, and Interactive Analytics.
       </p>
 
       <div class="cta-group">
-        <a href="project.html" class="btn btn-primary"><i class="fas fa-code"></i> View Projects</a>
-        <a href="dashboard.html" class="btn btn-outline" style="margin-left: 1rem;"><i class="fas fa-chart-line"></i>
-          View Dashboard</a>
+        <a href="project.html" class="btn btn-primary"><i class="fas fa-hat-wizard"></i> View Spells</a>
+        <a href="dashboard.html" class="btn btn-outline" style="margin-left: 1rem; font-family: var(--font-heading);"><i
+            class="fas fa-scroll"></i>
+          Marauder's Map</a>
       </div>
     </div>
   </section>
 
   <!-- About / Skills Section -->
   <section class="container glass" style="border-radius: 20px; padding: 3rem; margin-bottom: 4rem;">
-    <h2 class="section-title">Technical Expertise</h2>
+    <h2 class="section-title">Magical Expertise</h2>
 
     <div class="skills-grid">
       <div class="skill-group">
-        <h3><i class="fas fa-brain"></i> Data Science & ML</h3>
+        <h3 style="font-family: var(--font-heading);"><i class="fas fa-wand-magic-sparkles"></i> Data Witchcraft & ML
+        </h3>
 
         <div class="skill-item">
           <div class="skill-info"><span>Python</span> <span>90%</span></div>
@@ -181,7 +203,7 @@
       </div>
 
       <div class="skill-group">
-        <h3><i class="fas fa-cloud"></i> Cloud & Dev</h3>
+        <h3 style="font-family: var(--font-heading);"><i class="fas fa-cloud-moon"></i> Cloud & Divination</h3>
 
         <div class="skill-item">
           <div class="skill-info"><span>Azure Cloud</span> <span>70%</span></div>
@@ -207,7 +229,8 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2024 Harshal Pawar. Built with Data, Sweat & Code.</p>
+      <p style="font-family: var(--font-heading);">&copy; 2024 Harshal Pawar. Mischief Managed. Built with Data, Sweat &
+        Magic.</p>
     </div>
   </footer>
 
